@@ -2,6 +2,7 @@
 $route = isset($post) && $post->get('id') ? 'editComment' : 'addComment';
 $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
 ?>
+
 <form method="post" action="../public/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId()); ?>">
     <label for="pseudo">Pseudo</label><br>
     <input type="text" id="pseudo" name="pseudo"><br>
@@ -9,3 +10,7 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
     <textarea id="content" name="content"></textarea><br>
     <input type="submit" value="Ajouter" id="submit" name="submit">
 </form>
+<?php
+if($route['isValid']== 1){
+    echo '<p>'  . htmlspecialchars($route['editComment'&&'addComment']) . '</p>' ;
+}
