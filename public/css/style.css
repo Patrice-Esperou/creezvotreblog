@@ -14,10 +14,7 @@ main {
     background-color: #154695;   
 }
 
-.row{
-    display:flex;
-    flex-wrap: wrap;  
-}
+
 
 h1, .phraseaccroche{
     text-align: center;
@@ -191,7 +188,10 @@ a:link {
         margin-left: 130px;
     }
     
-  
+  section{
+      display: flex;
+      flex-wrap: wrap;
+  }
 
     
 
