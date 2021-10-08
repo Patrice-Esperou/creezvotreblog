@@ -29,15 +29,19 @@ foreach ($articles as $article)
 {
     ?>
 
-  <div class="row">
-  <div class="col-sm-4">
-      <div class="card">
+  <section class="row">
+     
+  
+      
+          <div class="col-sm-6">
+              <div class="card">
          <h3 class="card-header"><?= htmlspecialchars($article->getAuthor());?></h3>                
-          <ul class="card-body">
+          <ul>
             <li class="list-group-item">Le <?= htmlspecialchars($article->getCreatedAt());?></li>
             <li class="list-group-item"><?= htmlspecialchars($article->getTitle());?></li>
             <li class="list-group-item"><?= htmlspecialchars($article->getContent());?></li>
-         </ul>  
+         </ul>
+           
          <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>">
                 <button style="color: white; background-color: green; margin-bottom: 10px;">Voir & ajouter un commentaire </button>
          </a>
@@ -47,7 +51,8 @@ foreach ($articles as $article)
          <a href="../public/index.php?route=editArticle&articleId=<?= htmlspecialchars($article->getId());?>">
                 <button style="color: black; background-color: yellow; margin-bottom: 10px;">Modifier le blog </button>
          </a>
-</div></div></div>
+</div>
+</section>
     <?php
 }
 ?>
