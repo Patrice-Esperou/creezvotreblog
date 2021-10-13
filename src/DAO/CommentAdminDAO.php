@@ -35,4 +35,14 @@ class CommentAdminDAO extends DAO
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, article_id) VALUES (?, ?, NOW(), ?)';
         $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), $articleId]);
     }
+
+    public function updateComment(parameter $post, $articleId)
+    {
+        $idComment = $_POST['idcomment'];
+        $sql = 'UPDATE addComment SET isValid = 1 WHERE id = ?';
+        $this->execute([$idComment]);
+        header('Location: admin.php');
+    }
+
+   
 }
