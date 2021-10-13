@@ -17,6 +17,8 @@
     <?php
     foreach ($comments as $comment)
     {
+        if($comment->getIs_Valid()==1)
+        {
         ?>
         <div id="block1">
         <div class="lesderniers">
@@ -24,7 +26,7 @@
         <p><?= htmlspecialchars($comment->getContent());?></p>
         <p>Posté le <?= htmlspecialchars($comment->getCreatedAt());?></p>
         </div></div>
-        <?php
+        <?php }
     }
     ?></div>
 </div></div>
