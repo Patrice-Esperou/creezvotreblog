@@ -81,12 +81,25 @@ class BackController extends Controller
             }
             $article = $this->articleDAO->getArticle($articleId);
             $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-            return $this->view->render('single', [
+            return $this->view->render('admin', [
                 'article' => $article,
                 'comments' => $comments,
                 'post' => $post,
                 'errors' => $errors
             ]);
         }
+    }
+
+    public function comment(parameter $articleId)
+    {
+       
+        $comment = $this->commentDAO->getCommentsFromArticle($articleId);
+               
+            
+            return $this->view->render('admin_Valid_Comment', [
+                'comment' => $comment,
+                'errors' => $errors
+            ]);
+         return $this->view->render('admin_Valid_Comment');
     }
 }
