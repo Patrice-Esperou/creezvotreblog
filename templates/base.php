@@ -24,6 +24,7 @@
         <li class="nav-item"><a class="nav-link" href="../public/index.php?route=logout">Se déconnecter</a></li>
         <li class="nav-item"><a class="nav-link" href="../public/index.php?route=addArticle">Publier un blog</a></li>
         <li class="nav-item"><a class="nav-link" href="admin.php">Administration</a></li>
+        <li class="nav-item"><a class="nav-link" href="../public/index.php?route=updateComment">Validation des commentaires</a></li>
         <li class="nav-item"><a class="nav-link" href="addComment.php">Blog Unique</a></li>        
       </ul>      
     </div>
