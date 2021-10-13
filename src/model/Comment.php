@@ -25,6 +25,12 @@ class Comment
     private $createdAt;
 
     /**
+     * @var int
+     */
+    private $is_valid;
+
+
+    /**
      * @return int
      */
     public function getId()
@@ -86,5 +92,15 @@ class Comment
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function setIs_Valid()
+    {
+        $this->is_valid = $is_valid;
+    }
+    public function getIs_Valid()
+    {
+        
+        return $this->is_valid;
     }
 }
