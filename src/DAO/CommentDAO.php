@@ -53,7 +53,7 @@ class CommentDAO extends DAO
         header('Location: admin.php');
     }
 
-    public function getComments()
+    public function getComments($commentId)
     {
         $sql = 'SELECT * FROM comment ORDER BY id DESC';
         $result = $this->createQuery($sql);
