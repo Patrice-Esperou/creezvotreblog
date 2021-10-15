@@ -102,4 +102,15 @@ class BackController extends Controller
             ]);
          return $this->view->render('admin_Valid_Comment');
     }
+
+    public function getComments(parameter $commentId)
+    {
+        $comment = $this->commentDAO->getComments($commentId);
+
+            return $this->view->render('admin_Valid_Comment', [
+               'comment' => $comment,
+               'errors' => $errors
+            ]);
+
+    }
 }
