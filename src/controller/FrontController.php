@@ -31,7 +31,7 @@ class FrontController extends Controller
             if(!$errors) {
                 $this->commentDAO->addComment($post, $articleId);
                 $this->session->set('add_comment', 'Votre commentaire est en attente de validation par administrateur et sera prochainement publié  &#128513');
-                header('Location: ../public/index.php');
+                header('Location: ../public/index.php?route=article&articleId='.$articleId);
             }
             $article = $this->articleDAO->getArticle($articleId);
             $comments = $this->commentDAO->getCommentsFromArticle($articleId);
