@@ -1,8 +1,8 @@
 
-<form action="admin_valid_comment.php" method="post">
+<form action="" method="post">
     <div class="commentaire">
- <?php  echo '<h4>' . htmlspecialchars($rendu['pseudo']) . '  Le  ' . htmlspecialchars($addComment['commentDate']) . '</h4>' ;  ?>
- <?php  echo '<p>'  . htmlspecialchars($rendu['commentUnique']) . '</p>' ; ?>
+ <?php  echo '<h4>' . htmlspecialchars($comment['pseudo']) . '  Le  ' . htmlspecialchars($addComment['commentDate']) . '</h4>' ;  ?>
+ <?php  echo '<p>'  . htmlspecialchars($comment['commentUnique']) . '</p>' ; ?>
 
 
     <input name="idcomment" type="text" value=<?=$comment['id']?>>
