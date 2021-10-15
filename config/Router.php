@@ -40,8 +40,8 @@ class Router
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 }
                 
-                elseif($route === 'editComment'){
-                    $this->backController->editComment($this->request->getGet()->get('commentId'));
+                elseif($route === 'getComments'){
+                    $this->backController->getComments($this->request->getGet()->get('commentId'));
                 }
                 
                 elseif($route === 'register'){
