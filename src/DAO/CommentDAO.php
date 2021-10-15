@@ -36,7 +36,7 @@ class CommentDAO extends DAO
         $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), $articleId]);
     }
 
-    public function getCommentFromComments($commentId)
+    public function getCommentFromComment($commentId)
     {
         $req =$bdd->prepare('SELECT * FROM comment ORDER BY createdAt DESC');
         $req->execute();
@@ -51,6 +51,19 @@ class CommentDAO extends DAO
         $sql = 'UPDATE comment SET isValid = 1 WHERE id = ?';
         $this->createQuery([$commentId]);
         header('Location: admin.php');
+    }
+
+    public function getComments()
+    {
+        $sql = 'SELECT * FROM comment ORDER BY id DESC';
+        $result = $this->createQuery($sql);
+        $comments = [];
+        foreach ($result as $row){
+            $commentId = $row['id'];
+            $comments[$commentId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $comments;
     }
 
 }
