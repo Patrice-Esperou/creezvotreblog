@@ -17,7 +17,7 @@ class CommentAdminDAO extends DAO
         return $comment;
     }
 
-    public function getCommentsFromArticle($articleId)
+    public function getComments($commentId)
     {
         $sql = 'SELECT id, pseudo, content, createdAt FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
         $result = $this->createQuery($sql, [$articleId]);
@@ -41,7 +41,7 @@ class CommentAdminDAO extends DAO
         $idComment = $_POST['idcomment'];
         $sql = 'UPDATE addComment SET isValid = 1 WHERE id = ?';
         $this->execute([$idComment]);
-        header('Location: admin.php');
+        header('Location: ../admin.php');
     }
 
    
