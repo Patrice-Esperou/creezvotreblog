@@ -1,7 +1,7 @@
 
 <form action="" method="post">
     <div class="commentaire">
- <?php  echo '<h4>' . htmlspecialchars($comment['pseudo']) . '  Le  ' . htmlspecialchars($addComment['commentDate']) . '</h4>' ;  ?>
+ <?php  echo '<h4>' . htmlspecialchars($comment['pseudo']) . '  Le  ' . htmlspecialchars($Comment['commentDate']) . '</h4>' ;  ?>
  <?php  echo '<p>'  . htmlspecialchars($comment['commentUnique']) . '</p>' ; ?>
 
 
