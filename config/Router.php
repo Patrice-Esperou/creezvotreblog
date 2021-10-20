@@ -41,7 +41,15 @@ class Router
                 }
                 
                 elseif($route === 'getComments'){
-                    $this->backController->getComments($this->request->getGet()->get('commentId'));
+                    $this->backController->displayComments();
+                }
+
+                elseif($route === 'editComment'){
+                    $this->backController->editComment($this->request->getPost());
+                }
+
+                elseif($route === 'valideComments'){
+                    $this->backController->valideComment($this->request->getPost());
                 }
                 
                 elseif($route === 'register'){
