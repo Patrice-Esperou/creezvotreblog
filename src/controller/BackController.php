@@ -90,27 +90,24 @@ class BackController extends Controller
         }
     }
 
-    public function comment(parameter $articleId)
+    public function displayComments()
     {
-       
-        $comment = $this->commentDAO->getCommentsFromArticle($articleId);
-               
-            
+        $comments = $this->commentDAO->getComments();
             return $this->view->render('admin_Valid_Comment', [
-                'comment' => $comment,
-                'errors' => $errors
+               'comments' => $comments               
             ]);
-         return $this->view->render('admin_Valid_Comment');
     }
 
-    public function getComments(parameter $commentId)
+    public function valideComments()
     {
-        $comment = $this->commentDAO->getComments($commentId);
-
-            return $this->view->render('admin_Valid_Comment', [
-               'comment' => $comment,
-               'errors' => $errors
-            ]);
-
-    }
+        if($commentaires->get('submit')) {
+            $commentaires = $this->validation->validate('comment');
+        $comments = $this->commentDAO->getComments();
+        return $this->view->render('form_Comment', [
+            'comments' => $comments 
+        ]);
+        header('Location: form_Comment.php');
+    }   
+    
+}
 }
