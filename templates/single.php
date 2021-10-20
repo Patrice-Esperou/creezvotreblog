@@ -11,6 +11,9 @@
             <h3>Ajouter un commentaire  &#128522</h3>
             <?php include('form_comment.php'); ?>
         </div>
+        <div id="admin">
+            <h4> Les Nouveaux commentaires</h4>
+            <?php include('admin_Valid_Comment');?> 
 </div>
 <h3>Les derniers commentaires</h3>
         
