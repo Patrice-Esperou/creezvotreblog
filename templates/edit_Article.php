@@ -1,7 +1,7 @@
 <?php $this->title = "Modifier l'article"; ?>
 <h1>Mon blog</h1>
 <p>En construction</p>
-<div>
+<div><!--formulaire qui est sur la page modifier blog-->
 <div class="editarticle" align="center">
     <form method="post" action="../public/index.php?route=editArticle&articleId=<?= htmlspecialchars($article->getId()); ?>">
         <label for="title">Titre</label><br>
