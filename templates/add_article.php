@@ -5,7 +5,7 @@
 <?php
 $route = isset($post) && $post->get('id') ? 'editArticle&articleId='.$post->get('id') : 'addArticle';
 $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
-?>
+?> <!--formulaire ajouter un blog-->
     <div class="publishblog" align="center">
     <form method="post" action="../public/index.php?route=addArticle">
         <label for="title">Titre</label><br>
