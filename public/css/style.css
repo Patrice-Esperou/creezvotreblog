@@ -147,12 +147,16 @@ a:link {
     .footer{
         background-color: #eec8ad;
         height: 50px;
+        
+        
+        text-align: center;
+       
     }
     .footer a{
         font-size:30px;
-        color:#154695;
-      
+        color:#154695; 
     }
+   
     /*css formulaire page publier nouveau blog et modifier article */
     .publishblog input, .publishblog textarea, .editarticle input, .editarticle textarea{
         width: 400px;
@@ -169,13 +173,13 @@ a:link {
         resize: none;
     }
     
-    #block, #block1{
+    #block, #block1, #commentaire{
         margin-top: 60px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .lesderniers{
+    .lesderniers, .roundwind{
         border: 2px solid rgb(255, 47, 175);
         border-radius: 50%;
         padding: 25px 25px 25px 25px;
@@ -192,6 +196,23 @@ a:link {
       display: flex;
       flex-wrap: wrap;
   }
+  #commentaire{
+    border: 2px solid #584f49;
+    border-radius: 5px;
+    
+    
+  }
+  
+  .card{
+      width: 30%;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
 
     
 

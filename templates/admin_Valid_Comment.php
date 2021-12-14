@@ -1,46 +1,35 @@
+<?php
+use Tracy\Debugger;
 
+Debugger::enable();
+//$route = isset($commentaire) && $commentaire->get('id') ? 'editComment&valideComments='.$commentaire->get('id') : 'valideComments';
+//$submit = $route === 'valideComments' ? 'Envoyer' : 'Mettre à jour';
+?>
+ <p> ici est admin valid comment</p>
+ 
 
-<form action="index.php?route=article" method="post">
-    <div class="commentaire">
-     <?php 
+<div class="commentaire">
+  <?php 
+      
+   foreach ($comments as $commentaire) {
      
-       foreach ($comments as $commentaire) {
-           if ($commentaire['is_valid']== 0){
-     
-   echo '<h4>' . htmlspecialchars($commentaire['pseudo']) . '</h4>';
-   echo '<p>'. htmlspecialchars($commentaire['createdAt']) . '</p>';  
-   echo '<p>'  . htmlspecialchars($commentaire['content']) . '</p>' ; 
-   ?>
-
-    <input name="idcomment" type="text"value=<?=$commentaire['id']?>>
+     if ($commentaire['is_valid']== 0){ 
+  ?> 
+  <form method="post" action="../public/index.php?route=valideComments&commentId=<?= ($commentaire['id']);?>&articleId=<?= ($commentaire['article_id']);?>">
    
-    <button type="submit" class="btn btn-primary">Valider le commentaire</button>
-     <?php  
-    }
-
-}
+     <?php echo '<h4>' . htmlspecialchars($commentaire['pseudo']) . '</h4>';
+           echo '<p>'. htmlspecialchars($commentaire['createdAt']) . '</p>';  
+           echo '<p>' . htmlspecialchars($commentaire['content']) . '</p>';         
      ?>
-</form>
-<div class="postcom" align="center">
-    <?php
-foreach ($comments as $commentaire) {
-           if ($commentaire['is_valid']== 0){
-    ?>
-    <form method="post" action="../public/index.php?route=article=<?= htmlspecialchars($article->getId()); ?>">
-        <label for="title">Titre</label><br>
-        <input type="text" id="title" name="title" value="<?= htmlspecialchars($article->getTitle()); ?>"><br>
-        <label for="content">Contenu</label><br>
-        <textarea id="content" name="content"><?= htmlspecialchars($article->getContent()); ?></textarea><br>
-        <label for="author">Auteur</label><br>
-        <input type="text" id="author" name="author" value="<?= htmlspecialchars($article->getAuthor()); ?>"><br>
-        </div>
-     <div class="button">
-        <input type="submit" value="Mettre à jour" id="submit" name="submit">
-        </div>
-        <?php
-           } 
-        }
-           ?>   
+    <input name="idcomment" type="text" value=<?=$commentaire['id']?>>   
+    <button type="submit" class="btn btn-primary">Valider le commentaire</button>
     </form>
-    </div>
-    
+    <?php
+     }
+    }
+     ?>
+   
+     
+
+
+   

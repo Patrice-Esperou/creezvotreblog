@@ -1,7 +1,9 @@
 <?php
 
 namespace App\src\model;
+use Tracy\Debugger;
 
+Debugger::enable();
 class Comment
 {
     /**
@@ -100,7 +102,7 @@ class Comment
     }
     public function getIs_Valid()
     {
-        
+        $this->is_valid = $is_valid;
         return $this->is_valid;
     }
 }

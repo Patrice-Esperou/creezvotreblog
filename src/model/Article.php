@@ -1,6 +1,10 @@
 <?php
 
 namespace App\src\model;
+use Tracy\Debugger;
+
+Debugger::enable();
+
 
 class Article
 {

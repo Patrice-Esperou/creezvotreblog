@@ -21,26 +21,28 @@ class CommentDAO extends DAO
     {
         $sql = 'SELECT  id, pseudo, content, createdAt, is_valid FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
         $result = $this->createQuery($sql, [$articleId]);
-        $comments = [];
-        foreach ($result as $row) {
-            $commentId = $row['id'];
-            $comments[$commentId] = $this->buildObject($row);
-        }
-        $result->closeCursor();
-        return $comments;
+     //   $comments = [];
+     //  foreach ($result as $row) {
+     //       $commentId = $row['id'];
+      //      $comments[$commentId] = $this->buildObject($row);
+      //  }
+       // $result->closeCursor();
+        return $result;
     }
 
     public function addComment(Parameter $post, $articleId)
     {
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, article_id) VALUES (?, ?, NOW(), ?)';
-        $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), $articleId]);
+        $result = $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), $articleId]);
+        
     }
 
     public function editComment($commentId)
     {
         $commentId = $_POST['idcomment'];
-        $sql = 'UPDATE comment SET isValid = 1 WHERE id = ?';
-        $this->createQuery([$commentId]);
+        $sql = 'UPDATE comment SET is_valid = 1 WHERE id = ?';
+        $result = $this->createQuery($sql, [$commentId]);
+    
        
     }
 
@@ -51,5 +53,7 @@ class CommentDAO extends DAO
         
         return $result;
     }
+
+   
 
 }

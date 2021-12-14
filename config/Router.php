@@ -27,8 +27,12 @@ class Router
         try{
             if(isset($route))
             {
+  
                 if($route === 'article'){
                     $this->frontController->article($this->request->getGet()->get('articleId'));
+                }
+                elseif($route === 'valideComments'){
+                    $this->backController->editComment($this->request->getGet()->get('commentId'), $this->request->getGet()->get('articleId'));
                 }
                 elseif($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());
@@ -44,12 +48,8 @@ class Router
                     $this->backController->displayComments();
                 }
 
-                elseif($route === 'editComment'){
-                    $this->backController->editComment($this->request->getPost());
-                }
-
-                elseif($route === 'valideComments'){
-                    $this->backController->valideComment($this->request->getPost());
+                elseif($route === 'addComment'){                   
+                    $this->backController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
                 }
                 
                 elseif($route === 'register'){

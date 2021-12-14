@@ -1,4 +1,8 @@
-<?php $this->title = "Nouvel article"; ?>
+<?php $this->title = "Nouvel article";
+use Tracy\Debugger;
+
+Debugger::enable();
+ ?>
 <h1>Publication D'un Nouveau Blog  &#128522 </h1>
 
 <div>

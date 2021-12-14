@@ -72,20 +72,22 @@ class BackController extends Controller
 
     public function addComment(Parameter $post, $articleId)
     {
-        if($post->get('submit')) {
-            $errors = $this->validation->validate($post, 'Comment');
-            if(!$errors) {
+        if($post->get('submit')) { 
+           $errors = $this->validation->validate($post, 'Comment');
+          if(!$errors) {
+          
                 $this->commentDAO->addComment($post, $articleId);
                 $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
                 header('Location: ../public/index.php');
-            }
+           }
             $article = $this->articleDAO->getArticle($articleId);
-            $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-            return $this->view->render('admin', [
+          
+            $comments = $this->commentDAO->getComments();
+            return $this->view->render('admin_Valid_Comment', [
                 'article' => $article,
                 'comments' => $comments,
-                'post' => $post,
-                'errors' => $errors
+                //'post' => $post,
+               'errors' => $errors
             ]);
         }
     }
@@ -98,16 +100,21 @@ class BackController extends Controller
             ]);
     }
 
-    public function valideComments()
+    public function editComment($commentId, $articleId)
+
     {
-        if($commentaires->get('submit')) {
-            $commentaires = $this->validation->validate('comment');
-        $comments = $this->commentDAO->getComments();
-        return $this->view->render('form_Comment', [
-            'comments' => $comments 
+            //$comment = $this->validation->validate($comment, 'Comment');
+       $editComment = $this->commentDAO->editComment($commentId);
+    
+       $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+        $article = $this->articleDAO->getArticle($articleId);
+        
+        return $this->view->render('single', [
+            'article' => $article,
+            'comments' => $comments
         ]);
-        header('Location: form_Comment.php');
-    }   
+      
+   // }   
     
 }
 }

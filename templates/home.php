@@ -1,7 +1,11 @@
-<?php $this->title = 'Accueil'; ?>
+<?php $this->title = 'Accueil';
+use Tracy\Debugger;
+
+Debugger::enable();
+ ?>
 
 <h1>Mon blog</h1>
-<p>En construction</p>
+
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
@@ -19,22 +23,17 @@ if ($this->session->get('pseudo')) {
     <?php
 } else {
     ?>
-    <a href="../public/index.php?route=register">Inscription</a>
-    <a href="../public/index.php?route=login">Connexion</a>
+   
     <?php
 }
 ?>
+  <section class="row">
 <?php
 foreach ($articles as $article)
 {
-    ?>
-
-  <section class="row">
-     
-  
-      
-          <div class="col-sm-6">
-              <div class="card">
+ ?>    
+         
+    <div class="card">
          <h3 class="card-header"><?= htmlspecialchars($article->getAuthor());?></h3>                
           <ul>
             <li class="list-group-item">Le <?= htmlspecialchars($article->getCreatedAt());?></li>
@@ -51,8 +50,8 @@ foreach ($articles as $article)
          <a href="../public/index.php?route=editArticle&articleId=<?= htmlspecialchars($article->getId());?>">
                 <button style="color: black; background-color: yellow; margin-bottom: 10px;">Modifier le blog </button>
          </a>
-</div>
-</section>
+    </div>
     <?php
 }
 ?>
+</section>
