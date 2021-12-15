@@ -4,9 +4,10 @@ textarea{
     resize: none;
 }
 
-main {
+main{
     margin:0 0;
 }
+
 .header{
     text-align: center;
     font-family: 'Kaushan Script', cursive; 
@@ -15,8 +16,6 @@ main {
     background-color: #154695;   
 }
 
-
-
 h1, .phraseaccroche{
     text-align: center;
     font-family: 'Kaushan Script', cursive; 
@@ -24,6 +23,7 @@ h1, .phraseaccroche{
     color: #eec8ad;
     background-color: #154695;
 }
+
 .presentation{
     border: 2px solid greenyellow;
     width: 80%;
@@ -33,15 +33,19 @@ h1, .phraseaccroche{
     margin-left: auto;
     margin-right: auto;
 }
+
 .photo, .nomprenom, .cv{
     width: 20%;   
 }
+
 .nomprenom{
     font-size: 30px;
 }
+
 .photo{
     padding-top: 9px;
 }
+
 .phraseaccroche p{
     animation: point2 1s infinite;
               }
@@ -51,6 +55,7 @@ h1, .phraseaccroche{
   100%{
     transform: scale(1.05); }
 }
+
 .cv{   
 	font-weight: bold;
 	margin-top: 15px;
@@ -64,53 +69,64 @@ h1, .phraseaccroche{
     box-shadow:  -5px 5px 0px #154695,
                  -5px -5px 0px #607aa5; 
 }
+
 a:link{
     text-decoration: none;
      }
-     form{ 
+
+form{ 
         background-color: #fef1df;
         padding:30px;
         border-radius:10px;    
     }
-    form h1{
+
+form h1{
         font-size:20px;
     }
-    form .separation{
+
+form .separation{
         width:100%;
         height: 1px;
         background-color:#747cdf;
     }
-    form .corps-formulaire{
+
+form .corps-formulaire{
         display:flex;
         flex-wrap: wrap;
         margin-bottom: 30px;   
     }
-    form .corps-formulaire .groupe{
+
+form .corps-formulaire .groupe{
         position: relative;
         margin-top: 20px;
         display:flex;
         flex-direction: column;
     }
-    form .corps-formulaire .gauche .groupe input{
+
+form .corps-formulaire .gauche .groupe input{
         margin-top: 5px;
         padding: 10px 5px 10px 30px;
         border: 1px solid #c9c9c9;
         outline-color: #747cdf;
         border-radius: 5px;
     }
-    form .corps-formulaire .gauche .groupe i{
+
+form .corps-formulaire .gauche .groupe i{
         position:absolute;
         left:0;
         top:5;
         padding:30px 8px;color:#747cdf;
     }
-    form .corps-formulaire .droite{
+
+form .corps-formulaire .droite{
         margin-left:40px;
     }
-    form .corps-formulaire .droite .groupe{
+
+form .corps-formulaire .droite .groupe{
         height: 100%;
     }
-    form .corps-formulaire .droite .groupe textarea{
+
+form .corps-formulaire .droite .groupe textarea{
         margin-top: 5px;
         padding:10px;
         background-color: #f8f8f8;
@@ -120,7 +136,8 @@ a:link{
         resize: none;
         height:72%;
     }
-    .pied-formulaire button{
+    
+.pied-formulaire button{
         margin-top: 10px;
         background-color: #747cdf;
         color:white;
@@ -132,75 +149,87 @@ a:link{
         cursor: pointer;
         transition:transform 0.5s;
     }
-    .pied-formulaire button:hover{
+
+.pied-formulaire button:hover{
       transform:scale(1.05);
-    } 
-    @media screen and (max-width:920px){
+    }
+
+@media screen and (max-width:920px){
         form .corps-formulaire .droite{
             margin-left: 0px;
         }
     }
-    .contact{
+.contact{
         width: 30%;
         margin-left: auto;
         margin-right: auto;
     } 
-    .footer{
+
+.footer{
         background-color: #eec8ad;
         height: 50px;       
         text-align: center;   
     }
-    .footer a{
+
+.footer a{
         font-size:30px;
         color:#154695; 
     }
     /*css formulaire page publier nouveau blog et modifier article */
-    .publishblog input, .publishblog textarea, .editarticle input, .editarticle textarea{
+.publishblog input, .publishblog textarea, .editarticle input, .editarticle textarea{
         width: 400px;
         height: 50px;
         resize: none;
     }
-    .button{
+
+.button{
         text-align: center;
     }
-    .onearticle, .comments{
+    
+.onearticle, .comments{
         border: 2px solid greenyellow;
         border-radius: 5px;
         width: 40%;
         resize: none;
     }
-    #block, #block1, #commentaire{
+    
+#block, #block1, #commentaire{
         margin-top: 60px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .lesderniers, .roundwind{
+    
+.lesderniers, .roundwind{
         border: 2px solid rgb(255, 47, 175);
         border-radius: 50%;
         padding: 25px 25px 25px 25px;
         text-align: center;       
     }
-    h3{
+    
+h3{
         padding-top: 50px;
         margin-bottom: 20px;
         margin-left: 130px;
     }
     
-  section{
+section{
       display: flex;
       flex-wrap: wrap;
   }
-  #commentaire{
+  
+#commentaire{
     border: 2px solid #584f49;
     border-radius: 5px;  
   }
-  .card{
+  
+.card{
       width: 30%;
       display: flex;
       flex-wrap: wrap;
   }
-  section{
+  
+section{
     display: flex;
     flex-wrap: wrap;
   }
