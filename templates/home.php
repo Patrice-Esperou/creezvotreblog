@@ -1,6 +1,5 @@
 <?php $this->title = 'Accueil';
 use Tracy\Debugger;
-
 Debugger::enable();
  ?>
 

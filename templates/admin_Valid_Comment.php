@@ -1,9 +1,6 @@
 <?php
 use Tracy\Debugger;
-
 Debugger::enable();
-//$route = isset($commentaire) && $commentaire->get('id') ? 'editComment&valideComments='.$commentaire->get('id') : 'valideComments';
-//$submit = $route === 'valideComments' ? 'Envoyer' : 'Mettre à jour';
 ?>
  <p> ici est admin valid comment</p>
  

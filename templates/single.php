@@ -1,7 +1,4 @@
 
-<?php
-
-?>
 <h1>Mon blog</h1>
 <div id="block">
         <div class="onearticle">
