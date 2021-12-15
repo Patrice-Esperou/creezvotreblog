@@ -73,7 +73,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     <main id="home">
     <section class="presentation">
         <div class="photo">
-           <img src="img/profil.jpg" alt="photo de profil">
+           <img src="../public/img/profil.jpg" alt="photo de profil">
         </div> 
         <div class="nomprenom">
             <p>Patrice</p>
