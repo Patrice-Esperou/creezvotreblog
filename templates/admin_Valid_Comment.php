@@ -1,11 +1,8 @@
-<?php
-use Tracy\Debugger;
-Debugger::enable();
-?>
+<h1>Validation des blogs</h1>
  <p> ici est admin valid comment</p>
- 
-
-<div class="commentaire">
+ <li class="nav-item"><a class="nav-link" href="../public/index.php?route=addArticle">Publier un blog</a></li>
+<section class="roundwind1">
+<div id="roundwind1">
   <?php 
       
    foreach ($comments as $commentaire) {
@@ -18,13 +15,15 @@ Debugger::enable();
            echo '<p>'. htmlspecialchars($commentaire['createdAt']) . '</p>';  
            echo '<p>' . htmlspecialchars($commentaire['content']) . '</p>';         
      ?>
-    <input name="idcomment" type="text" value=<?=$commentaire['id']?>>   
+   <span class="idcommentaire"> <input name="idcomment" type="text" value=<?=$commentaire['id']?>>  </span> 
     <button type="submit" class="btn btn-primary">Valider le commentaire</button>
     </form>
     <?php
      }
     }
      ?>
+     </div>
+  </section>
    
      
 

@@ -64,9 +64,12 @@ class BackController extends Controller
 
     public function logout()
     {
+        $this->session->remove('login');
+        $this->session->remove('id');
+        $this->session->remove('pseudo');
+        $this->session->remove('role');
+        
         $this->session->stop();
-        $this->session->start();
-        $this->session->set('logout, A la prochaine !');
         header('Location: ../public/index.php');
     }
 
@@ -103,7 +106,6 @@ class BackController extends Controller
     public function editComment($commentId, $articleId)
 
     {
-            //$comment = $this->validation->validate($comment, 'Comment');
        $editComment = $this->commentDAO->editComment($commentId);
     
        $comments = $this->commentDAO->getCommentsFromArticle($articleId);

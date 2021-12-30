@@ -4,8 +4,8 @@ require '../vendor/phpmailer/src/PHPMailer.php';
 require '../vendor/phpmailer/src/SMTP.php';
 require '../vendor/phpmailer/src/Exception.php';
 
-
 session_start();
+
 $db = new PDO('mysql:host=localhost;dbname=blackblog2;', 'root', '');
 if(isset($_POST['valider'])){
     if(!empty($_POST['email'])){
@@ -70,7 +70,9 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
 ?>
 <link rel="stylesheet" href="../public/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <main id="home">
+ 
+
+<main id="home">
     <section class="presentation">
         <div class="photo">
            <img src="../public/img/profil.jpg" alt="photo de profil">
@@ -84,9 +86,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     </section>
     <div class="phraseaccroche">
         <p>L' expertise Du Développeur Par Exellence</p>
-    </div>
-    
-        
+    </div>        
         <section class="contact">        
         <form method="POST" action="">
         <h1>Contactez-nous</h1>
@@ -122,17 +122,5 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         </form>
         </section>
     </main>
+  
    
-    <div class="footer">
-    <a class="btn-primary" href="https://github.com/padraig11" title="GitHub" rel="noreferrer noopener" target="_blank">
-            <i class="fa-brands fa-github" aria-hidden="true"></i></a>
-    
-            <a class="btn-primary" href="https://www.linkedin.com/in/patrice-esperou-92aaa7191/" title=" Linkedin Patrice Esperou" rel="noreferrer noopener" target="_blank">
-           <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a class="btn-primary" href="https://www.facebook.com/creasite.narbonne" title=" Facebook creasite.narbonne" rel="noreferrer noopener" target="_blank">
-           <i class="fab fa-facebook"></i>
-        </a>
-        <a class="btn-primary" href="../public/index.php?route=getComments">Admistration
-        </a>
-        </footer>

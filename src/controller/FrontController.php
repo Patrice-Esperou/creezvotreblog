@@ -14,6 +14,12 @@ class FrontController extends Controller
         ]);
     }
 
+    public function accueil()
+    {
+        return $this->view->render('accueil','base');
+        header('Location: ../public/index.php?route=accueil');
+    }
+
     public function article($articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);
@@ -73,6 +79,8 @@ class FrontController extends Controller
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('id', $result['result']['id']);
                 $this->session->set('pseudo', $post->get('pseudo'));
+                $this->session->set('role',  $result['result']['role']);
+               
                 header('Location: ../public/index.php');
             }
             else {

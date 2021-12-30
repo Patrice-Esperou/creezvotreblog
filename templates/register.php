@@ -1,7 +1,10 @@
 <?php $this->title = "Inscription"; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
-<div>
+<body>
+<h1>Inscription sur le blog !</h1>
+
+<?= $this->session->show('error_register'); ?>
+
+<main class="inscriptconnect">
     <form method="post" action="../public/index.php?route=register">
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
@@ -9,7 +12,8 @@
         <label for="password">Mot de passe</label><br>
         <input type="password" id="password" name="password"><br>
         <?= isset($errors['password']) ? $errors['password'] : ''; ?>
+        </br></br>
         <input type="submit" value="Inscription" id="submit" name="submit">
     </form>
-    <a href="../public/index.php">Retour à l'accueil</a>
-</div>
+</main>
+</body>

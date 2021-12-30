@@ -61,6 +61,10 @@ class Router
                 elseif($route === 'logout'){
                     $this->backController->logout();
                 }
+                elseif($route === 'accueil'){
+                    $this->frontController->accueil();
+                }
+                
                 else{
                     $this->errorController->errorNotFound();
                 }

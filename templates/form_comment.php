@@ -1,7 +1,4 @@
-<?php
-use Tracy\Debugger;
-Debugger::enable();
-?>
+
 
 <!-- champ du FORMULAIRE QUI SE TROUVE SUR LA PAGE AJOUTER UN COMMENTAIRE le formulaire est sur single.php-->
 <form method="post" action="../public/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId());?>">

@@ -1,9 +1,6 @@
 <?php $this->title = "Modifier l'article"; ?>
-<?php
-use Tracy\Debugger;
 
-Debugger::enable();
-?>
+
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div><!--formulaire qui est sur la page modifier blog-->

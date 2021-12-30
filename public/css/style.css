@@ -201,13 +201,31 @@ form .corps-formulaire .droite .groupe textarea{
         justify-content: space-around;
     }
     
-.lesderniers, .roundwind{
+.roundwind{
         border: 2px solid rgb(255, 47, 175);
         border-radius: 50%;
         padding: 25px 25px 25px 25px;
         text-align: center;       
     }
-    
+
+#roundwind1 form{
+    width: 500px;
+    text-align: center; 
+    border: 2px solid rgb(47, 213, 255); 
+    background-color: #eec8ad; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+         
+}
+#roundwind1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.idcommentaire{
+    display: none;
+}
+   
 h3{
         padding-top: 50px;
         margin-bottom: 20px;
@@ -226,14 +244,27 @@ section{
   
 .card{
       width: 30%;
-      display: flex;
-      flex-wrap: wrap;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background-color: #eec8ad;
   }
   
-section{
-    display: flex;
-    flex-wrap: wrap;
-  }
+
+.row{
+    justify-content: space-around;
+    margin-bottom:20px;   
+}
+.inscriptconnect{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    height: 600px;
+}
+main form{
+    align-items: center;
+}
 
   
 

@@ -1,10 +1,9 @@
 <?php $this->title = 'Accueil';
-use Tracy\Debugger;
-Debugger::enable();
+
  ?>
 
 <h1>Mon blog</h1>
-
+<?= $this->session->show('accueil');?>
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
@@ -30,8 +29,7 @@ if ($this->session->get('pseudo')) {
 <?php
 foreach ($articles as $article)
 {
- ?>    
-         
+ ?>            
     <div class="card">
          <h3 class="card-header"><?= htmlspecialchars($article->getAuthor());?></h3>                
           <ul>
@@ -50,7 +48,7 @@ foreach ($articles as $article)
                 <button style="color: black; background-color: yellow; margin-bottom: 10px;">Modifier le blog </button>
          </a>
     </div>
-    <?php
+<?php
 }
 ?>
 </section>

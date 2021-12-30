@@ -23,7 +23,10 @@ class User
      * @var \DateTime
      */
     private $createdAt;
-
+    /**
+     * @var boolean
+     */
+    private $role;
     /**
      * @return int
      */
@@ -86,5 +89,19 @@ class User
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+    /**
+     * @return Boolean
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+    /**
+     * @return Boolean
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
     }
 }
