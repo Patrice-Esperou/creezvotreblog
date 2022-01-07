@@ -16,8 +16,8 @@ class FrontController extends Controller
 
     public function accueil()
     {
-        return $this->view->render('accueil','base');
-        header('Location: ../public/index.php?route=accueil');
+        return $this->view->render('accueil');
+    
     }
 
     public function article($articleId)

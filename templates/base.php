@@ -18,16 +18,23 @@
         <li class="nav-item"><a class="nav-link" href="../public/index.php">Les Blogs</a></li>
         <li class="nav-item"><a class="nav-link" href="../public/index.php?route=login">Connection</a></li>
         <li class="nav-item"><a class="nav-link" href="../public/index.php?route=register">inscription</a></li>
-        <li class="nav-item"><a class="nav-link" href="../templates/accueil.php">Accueil</a></li>                 
+        <li class="nav-item"><a class="nav-link" href="../public/index.php?route=accueil">Accueil</a></li>                 
         <li class="nav-item"><a class="nav-link" href="../public/index.php?route=logout">Se déconnecter</a></li>
         <?php
-        var_dump($_SESSION);
-            if ($_SESSION['role'] == 1)
+      
+            if ($_SESSION == true)
              {
         ?>
         <li class="nav-item"><a class="nav-link" href="../public/index.php?route=addArticle">Publier un blog</a></li>
         <?php
          }
+         if ($_SESSION['role'] == 1)
+         {
+          ?>
+          <li class="nav-item"><a class="nav-link" href="../public/index.php?route=getComments">Valider le commentaire</a></li>
+          <?php
+           }
+
          ?>        
       </ul>      
     </div>
@@ -46,7 +53,7 @@
         <a class="btn" href="https://www.facebook.com/creasite.narbonne" title=" Facebook creasite.narbonne" rel="noreferrer noopener" target="_blank">
            <i class="fab fa-facebook"></i>
         </a>
-        <a class="btn" href="../public/index.php?route=getComments">Admistration
+        <a class="btn" href="../public/index.php?route=login">Admistration
         </a>
         </footer>
 </body>

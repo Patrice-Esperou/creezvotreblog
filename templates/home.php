@@ -1,8 +1,8 @@
-<?php $this->title = 'Accueil';
+<?php $this->title = 'home';
 
  ?>
 
-<h1>Mon blog</h1>
+<h1>Les blogs !</h1>
 <?= $this->session->show('accueil');?>
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
@@ -14,11 +14,7 @@
 <?= $this->session->show('logout'); ?>
 <?php
 if ($this->session->get('pseudo')) {
-    ?>
-    <a href="../public/index.php?route=logout">Déconnexion</a>
-    <a href="../public/index.php?route=profile">Profil</a>
-    <a href="../public/index.php?route=addArticle">Nouvel article</a>
-    <?php
+    
 } else {
     ?>
    

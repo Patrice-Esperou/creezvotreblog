@@ -4,7 +4,7 @@ require '../vendor/phpmailer/src/PHPMailer.php';
 require '../vendor/phpmailer/src/SMTP.php';
 require '../vendor/phpmailer/src/Exception.php';
 
-session_start();
+
 
 $db = new PDO('mysql:host=localhost;dbname=blackblog2;', 'root', '');
 if(isset($_POST['valider'])){

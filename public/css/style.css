@@ -192,6 +192,8 @@ form .corps-formulaire .droite .groupe textarea{
         border-radius: 5px;
         width: 40%;
         resize: none;
+        padding-top: 55px;
+        padding-left: 55px;
     }
     
 #block, #block1, #commentaire{
