@@ -62,7 +62,7 @@ class FrontController extends Controller
                 $this->session->set('register', 'Votre inscription a bien été effectuée');
                 header('Location: ../public/index.php');
             }
-            return $this->view->render('register', [
+            return $this->view->render('register','base', [
                 'post' => $post,
                 'errors' => $errors
             ]);
