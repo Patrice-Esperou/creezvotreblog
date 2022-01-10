@@ -66,6 +66,9 @@ class Router
                 elseif($route === 'accueil'){
                     $this->frontController->accueil();
                 }
+                elseif($route === 'home'){
+                    $this->frontController->home();
+                }
                 
                 else{
                     $this->errorController->errorNotFound();
