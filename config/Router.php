@@ -23,7 +23,9 @@ class Router
 
     public function run()
     {
-        $route = $this->request->getGet()->get('route');
+        $parameters = $this->request->getGet();
+        $route = $parameters->get('route');
+        // var_dump($route);
         try{
             if(isset($route))
             {

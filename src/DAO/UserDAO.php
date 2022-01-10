@@ -34,4 +34,17 @@ class UserDAO extends DAO
             'isPasswordValid' => $isPasswordValid
         ];
     }
+
+    public function email(Parameter $post)
+    {
+        $insertUser = $db->prepare('INSERT INTO user(email, ident, confirm)VALUES (?, ?, ?)');
+        $insertUser->execute(array($email, $ident, 0));
+    
+        $recupUser = $db->prepare('SELECT id, email, ident, confirm FROM user WHERE email = ?');
+        $recupUser->execute(array($email));
+        if($recupUser->rowCount() > 0){
+            $userInfo = $recupUser->fetch();
+            $_SESSION['id'] = $userInfo['id'];
+    }
+}
 }
