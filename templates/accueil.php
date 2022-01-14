@@ -95,7 +95,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
             <div class="gauche">
                 <div class="groupe">
                     <label>Votre prénom</label>
-                    <input type="text">
+                    <input type="text" name="pseudo">
                     <i class="fa-solid fa-user"></i>
                 </div>
                     <div class="groupe">
