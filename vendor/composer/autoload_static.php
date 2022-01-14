@@ -7,10 +7,16 @@ namespace Composer\Autoload;
 class ComposerStaticInit7e41009c204e6ba0947c67e1fdee50db
 {
     public static $files = array (
+        '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         'd507e002f7fce7f0c6dbf1f22edcb902' => __DIR__ . '/..' . '/tracy/tracy/src/Tracy/functions.php',
+        '38143a9afc50997d55e4815db8489d1c' => __DIR__ . '/..' . '/rector/rector/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'A' => 
         array (
             'App\\src\\' => 8,
@@ -19,6 +25,10 @@ class ComposerStaticInit7e41009c204e6ba0947c67e1fdee50db
     );
 
     public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'App\\src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
