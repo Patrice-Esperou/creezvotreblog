@@ -1,6 +1,7 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=localhost;dbname=blackblog2;', 'root', '');
+include("../config/dev.php");
+
 if(isset($_GET['id']) AND !empty($_GET['id']) AND !empty($_GET['ident']) AND !empty($_GET['id'])){
     $getid = $_GET['id'];
     $getident = $_GET['ident'];
