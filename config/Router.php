@@ -69,6 +69,9 @@ class Router
                 elseif($route === 'home'){
                     $this->frontController->home();
                 }
+                elseif($route === 'sendMail'){
+                    $this->frontController->sendMail($this->request->getPost());
+                }
                 
                 else{
                     $this->errorController->errorNotFound();

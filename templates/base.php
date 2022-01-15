@@ -28,7 +28,7 @@
         <li class="nav-item"><a class="nav-link" href="../public/index.php?route=addArticle">Publier un blog</a></li>
         <?php
          }
-         if ($_SESSION['role'] == 1)
+         if (isset($_SESSION["role"]) && $_SESSION['role'] == 1)
          {
           ?>
           <li class="nav-item"><a class="nav-link" href="../public/index.php?route=getComments">Valider le commentaire</a></li>

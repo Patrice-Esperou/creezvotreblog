@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+use Rector\Autodiscovery\Rector\Class_\MoveValueObjectsToValueObjectDirectoryRector;
 use Rector\Core\Configuration\Option;
 use Rector\Php74\Rector\Property\TypedPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
@@ -16,10 +16,24 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // Define what rule sets will be applied
     $containerConfigurator->import(LevelSetList::UP_TO_PHP_80);
-
+   
     // get services (needed for register a single rule)
-    // $services = $containerConfigurator->services();
+     $services = $containerConfigurator->services();
 
     // register a single rule
-    // $services->set(TypedPropertyRector::class);
+     $services->set(class:Rector\Autodiscovery\Rector\Class_\MoveValueObjectsToValueObjectDirectoryRector::class);
+};
+
+
+
+
+return static function (ContainerConfigurator $containerConfigurator): void {
+    $services = $containerConfigurator->services();
+
+    $services->set(MoveValueObjectsToValueObjectDirectoryRector::class)
+        ->configure([
+            MoveValueObjectsToValueObjectDirectoryRector::TYPES => ['ValueObjectInterfaceClassName'],
+            MoveValueObjectsToValueObjectDirectoryRector::SUFFIXES => ['Search'],
+            MoveValueObjectsToValueObjectDirectoryRector::ENABLE_VALUE_OBJECT_GUESSING => true,
+        ]);
 };

@@ -1,73 +1,4 @@
-<?php
-require '../vendor/autoload.php' ;
-require '../vendor/phpmailer/src/PHPMailer.php';
-require '../vendor/phpmailer/src/SMTP.php';
-require '../vendor/phpmailer/src/Exception.php';
 
-
-
-$db = new PDO('mysql:host=localhost;dbname=blackblog2;', 'root', '');
-if(isset($_POST['valider'])){
-    if(!empty($_POST['email'])){
-        $ident = rand(1000000, 9000000);
-        $email = $_POST['email'];
-        $insertUser = $db->prepare('INSERT INTO user(email, ident, confirm)VALUES (?, ?, ?)');
-        $insertUser->execute(array($email, $ident, 0));
-    
-        $recupUser = $db->prepare('SELECT id, email, ident, confirm FROM user WHERE email = ?');
-        $recupUser->execute(array($email));
-        if($recupUser->rowCount() > 0){
-            $userInfo = $recupUser->fetch();
-            $_SESSION['id'] = $userInfo['id'];
-        
-function smtpmailer($to, $from, $from_name, $subject, $body)
-{
-    $mail = new PHPMailer\PHPMailer\PHPMailer();
-
-        
-        $mail->isSMTP();
-        $mail->SMTPAuth = true;                     
-        $mail->SMTPSecure = 'ssl'; 
-        $mail->Host = 'smtp.gmail.com';
-        $mail->Port = 465;                    
-        $mail->Username = 'testemailblogocr@gmail.com';                 // SMTP username
-        $mail->Password = '123azerty123';                           // SMTP password
-                          
-        $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->setFrom("testemailblogocr@gmail.com");
-        $mail->FromName=$from_name;
-        $mail->Sender=$from;
-        $mail->ADDReplyTo($from, $from_name);
-        $mail->subject = $subject;
-        $mail->Body = $body;
-        $mail->addAddress($to);
-        if(!$mail->Send())
-        {
-            $error="essais plus tard";
-            return $error;
-        }
-        else
-        {
-            $error = "Merci votre Email a ete envoyé";
-            return $error;
-        } 
-}                              
-    
-        $to = $_POST['email'];
-        $from = 'testemailblogocr@gmail.com';
-        $name = 'Padraig';
-        $subj = 'Email de confirmation';
-        $msg = 'http://localhost:8080/creezvotreblog/public/confirMail.php?id='.$_SESSION['id'].'&ident='.$ident;
-
-        $error=smtpmailer($to, $from, $name, $subj, $msg);
-}
-}else{
-    echo "veuillez";
-}
-}
-   
-
-?>
 <link rel="stylesheet" href="../public/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  
@@ -88,7 +19,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         <p>L' expertise Du Développeur Par Exellence</p>
     </div>        
         <section class="contact">        
-        <form method="POST" action="">
+        <form method="POST" action="?route=sendMail">
         <h1>Contactez-nous</h1>
         <div class="separation"></div>
           <div class="corps-formulaire">
@@ -105,14 +36,14 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
                    </div>
                     <div class="groupe">
                       <label>Votre téléphone</label>
-                      <input type="text">
+                      <input type="text" name="tel" class="form-control">
                       <i class="fa-solid fa-mobile-screen"></i>
                    </div>
             </div>
             <div class="droite">
                 <div class="groupe">
                     <label>Message</label>
-                    <textarea></textarea>
+                    <textarea name ="message"></textarea>
                 </div>
             </div>
           </div>
